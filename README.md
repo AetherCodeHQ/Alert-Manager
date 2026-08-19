@@ -23,12 +23,12 @@ Every developer needs alert manager — but existing tools are either too comple
 
 ## Features
 
-- **Multi-channel notifications** — Multi-channel notifications
-- **Alert routing and grouping** — Alert routing and grouping
-- **Escalation policies** — Escalation policies
-- **Alert history** — Alert history
-- **Integration with PagerDuty, Slack** — Integration with PagerDuty, Slack
-- **CLI management** — CLI management
+- Multi-channel notifications
+- Alert routing and grouping
+- Escalation policies
+- Alert history
+- Integration with PagerDuty, Slack
+- CLI management
 
 ## Quick Start
 
