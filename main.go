@@ -1,26 +1,21 @@
+
 package main
 
 import (
 	"fmt"
 	"os"
+	"time"
 )
 
-// alert_manager - Intelligent alerting system
-func alert_manager(path string) {
-	fmt.Println("========================================")
-	fmt.Println("  Alert-Manager")
-	fmt.Println("  Intelligent alerting system")
-	fmt.Println("========================================")
-	fmt.Println()
-	fmt.Println("Target:", path)
-	fmt.Println("Processing...")
-	fmt.Println("Done!")
-}
-
 func main() {
-	path := "."
-	if len(os.Args) > 1 {
-		path = os.Args[1]
+	if len(os.Args) < 2 {
+		fmt.Println("usage: Alert-Manager <file-or-dir>")
+		os.Exit(1)
 	}
-	alert_manager(path)
+	fi, err := os.Stat(os.Args[1])
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
+	fmt.Printf("name=%s size=%d modified=%s\n", fi.Name(), fi.Size(), fi.ModTime().Format(time.RFC3339))
 }
